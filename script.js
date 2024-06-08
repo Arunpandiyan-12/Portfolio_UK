@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Smooth scrolling for navigation links
+    const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelectorAll('header nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            document.getElementById(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+
+    menuToggle.addEventListener('click', function() {
+        document.querySelector('header nav ul').classList.toggle('active');
     });
 
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default link behavior
+            document.querySelector('header nav ul').classList.remove('active');
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
 });
+

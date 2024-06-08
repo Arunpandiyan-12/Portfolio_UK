@@ -155,8 +155,11 @@ h2::after {
 
 /* Projects section styles */
 #projects {
-    background: #1f1f1f;
+    /* background: #1f1f1f; */
     padding: 50px 0;
+}
+#resume{
+    background: #1f1f1f;
 }
 
 #projects .container {
@@ -355,3 +358,44 @@ footer p {
     }
 }
 
+.menu-toggle {
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    cursor: pointer;
+    display: none; /* Hide by default */
+
+}
+.menu-toggle i{
+    font-size: 20px;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    left: 0;
+    background: #1f1f1f;
+    width: 100%;
+}
+
+header nav ul.active li {
+    padding: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show the hamburger menu icon on mobile */
+    }
+
+    header nav ul {
+        display: none; /* Hide the menu items by default on mobile */
+    }
+}
