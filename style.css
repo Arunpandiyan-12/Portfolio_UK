@@ -149,7 +149,6 @@ h2::after {
 .skill-slide:hover {
     background: #ff6347;
     color: #fff;
-    transform: scale(1.1);
 }
 
 
